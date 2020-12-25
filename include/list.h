@@ -28,6 +28,14 @@ public:
 		}
 	}
 
+	List(const List& list) {
+		head = NULL;
+		last = NULL;
+		Node<T>* current = head;
+		for (iterator iter = list.begin(); iter != list.end(); ++iter)
+			push_back(iter.current->data);
+	}
+	
 	T GetFirst() { return head->data; }
 
 	T GetLast() { return last->data; }
@@ -102,11 +110,11 @@ public:
 			return iter.current != current;
 		}
 	};
-	iterator begin() {
+	iterator begin() const {
 		iterator iter(head);
 		return iter;
 	}
-	iterator end() {
+	iterator end() const{
 		iterator iter(NULL);
 		return iter;
 	}

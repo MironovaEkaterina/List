@@ -53,6 +53,11 @@ TEST(List, false_when_list_isnt_empty) {
 	EXPECT_EQ(0, list.IsEmpty());
 }
 
+TEST(List, can_copy_list) {
+	List<int> list1;
+	list1.push_front(0);
+	ASSERT_NO_THROW(List<int> list2(list1));
+}
 
 
  
