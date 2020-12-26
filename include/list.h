@@ -128,4 +128,15 @@ public:
 			delete tmp.current;
 		}
 	}
+
+	void insert(iterator iter,T d) {
+		if (iter == end()) push_back(d); 
+		else {
+			Node<T>* n = new Node<T>;
+			n->data = d;
+			n->next = (*iter)->next;
+			(*iter)->next = n;
+			if (n->next == NULL) last = n;
+		}		
+	}
 };

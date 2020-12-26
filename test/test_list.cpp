@@ -59,5 +59,14 @@ TEST(List, can_copy_list) {
 	ASSERT_NO_THROW(List<int> list2(list1));
 }
 
+TEST(List, can_insert_elem) {
+	List<int> list;
+	list.push_front(0);
+	auto iter = list.begin();
+	list.insert(iter, 1);
+	EXPECT_EQ(1, list.GetLast());
+}
+	
+
 
  
